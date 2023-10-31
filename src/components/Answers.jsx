@@ -90,9 +90,6 @@ const Answers = ({
               dangerouslySetInnerHTML={{ __html: quiz.question }}
             />
             <div className='mb-2'>
-              {/* <label className='flex items-center font-semibold pb-2 text-zinc-500'>
-                Answer <PiSealQuestionFill className='ml-1' />
-              </label> */}
               <select
                 required
                 name='answer'
@@ -101,7 +98,7 @@ const Answers = ({
                 onChange={(e) => handleAnswerChange(e, quiz.question)}
               >
                 <option value='Select'>
-                  Select Answer:
+                  Select Answer
                 </option>{' '}
                 {quiz.answers.map((answer) => (
                   <option key={answer} value={answer}>
