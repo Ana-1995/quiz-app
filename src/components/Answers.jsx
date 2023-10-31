@@ -1,5 +1,6 @@
 import React from "react"
 import { useState, useEffect } from "react"
+import { PiSealQuestionFill } from 'react-icons/pi'
 import Results from "./Results"
 
 const Answers = ({
@@ -36,23 +37,30 @@ const Answers = ({
     e.preventDefault()
     const { value } = e.target
 
-    const isExistQuestion =
-      selectedAnswers.length &&
-      selectedAnswers.find((answer) => answer.question === selectedQuestion)
-
-    if (isExistQuestion && isExistQuestion.answer) {
-      const updatedAnswers = selectedAnswers.map((answer) => {
-        if (answer.question === selectedQuestion) {
-          return { question: selectedQuestion, answer: value }
-        }
-        return answer
-      })
+    if (value === 'Select') {
+      const updatedAnswers = selectedAnswers.filter(
+        (answer) => answer.question !== selectedQuestion
+      )
       setSelectedAnswers(updatedAnswers)
     } else {
-      setSelectedAnswers([
-        ...selectedAnswers,
-        { question: selectedQuestion, answer: value },
-      ])
+      const isExistQuestion =
+        selectedAnswers.length &&
+        selectedAnswers.find((answer) => answer.question === selectedQuestion)
+
+      if (isExistQuestion && isExistQuestion.answer) {
+        const updatedAnswers = selectedAnswers.map((answer) => {
+          if (answer.question === selectedQuestion) {
+            return { question: selectedQuestion, answer: value }
+          }
+          return answer
+        })
+        setSelectedAnswers(updatedAnswers)
+      } else {
+        setSelectedAnswers([
+          ...selectedAnswers,
+          { question: selectedQuestion, answer: value },
+        ])
+      }
     }
   }
 
@@ -83,7 +91,9 @@ const Answers = ({
               dangerouslySetInnerHTML={{ __html: quiz.question }}
             />
             <div className='mb-2'>
-              <label className='block font-semibold pb-2 text-zinc-500'>Select answer:</label>
+              <label className='flex items-center font-semibold pb-2 text-zinc-500'>
+                Answer <PiSealQuestionFill className='ml-1' />
+              </label>
               <select
                 required
                 name='answer'
@@ -91,6 +101,7 @@ const Answers = ({
                 className='border border-gray-500 rounded p-2 w-full bg-transparent'
                 onChange={(e) => handleAnswerChange(e, quiz.question)}
               >
+                <option value='Select'>Select</option>{' '}
                 {quiz.answers.map((answer) => (
                   <option key={answer} value={answer}>
                     {answer}
