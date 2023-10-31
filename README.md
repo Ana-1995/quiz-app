@@ -1,8 +1,12 @@
 # React Quiz App with Tailwind CSS
 
-This is a simple quiz application built using React.js and styled with Tailwind CSS. It fetches quiz data from the Open Trivia Database API and allows users to answer questions, providing a delightful experience for knowledge enthusiasts.
+Live Website: [https://quiz-app-three-peach.vercel.app/]
 
 ![Quiz App Screenshot]('../../src/assets/quiz.jpg)
+
+This is a simple quiz application built using React.js and styled with Tailwind CSS. It fetches quiz data from the Open Trivia Database API and allows users to answer questions, providing a delightful experience for knowledge enthusiasts.
+
+
 
 ## Features
 
