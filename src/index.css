@@ -1,0 +1,24 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'open sans', sans-serif;
+}
+
+.scrollbar-container::-webkit-scrollbar {
+  width: 14px;
+  border-radius: 50%;
+
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: #FFFDD0;
+  border-radius: 50%;
+}
