@@ -1,6 +1,5 @@
 import React from "react"
 import { useState, useEffect } from "react"
-import { PiSealQuestionFill } from 'react-icons/pi'
 import Results from "./Results"
 
 const Answers = ({
@@ -91,17 +90,19 @@ const Answers = ({
               dangerouslySetInnerHTML={{ __html: quiz.question }}
             />
             <div className='mb-2'>
-              <label className='flex items-center font-semibold pb-2 text-zinc-500'>
+              {/* <label className='flex items-center font-semibold pb-2 text-zinc-500'>
                 Answer <PiSealQuestionFill className='ml-1' />
-              </label>
+              </label> */}
               <select
                 required
                 name='answer'
                 value={relatedAnswer(quiz.question, selectedAnswers)}
-                className='border border-gray-500 rounded p-2 w-full bg-transparent'
+                className='border border-gray-500 rounded p-2 w-full bg-transparent mt-2'
                 onChange={(e) => handleAnswerChange(e, quiz.question)}
               >
-                <option value='Select'>Select</option>{' '}
+                <option value='Select'>
+                  Select Answer:
+                </option>{' '}
                 {quiz.answers.map((answer) => (
                   <option key={answer} value={answer}>
                     {answer}
