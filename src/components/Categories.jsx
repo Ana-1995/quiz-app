@@ -85,7 +85,7 @@ const Categories = () => {
       }}
     >
       <div className='h-screen  flex justify-center items-center'>
-        <div className='py-5 pl-2 lg:pl-6 pr-3 overflow-y-scroll scrollbar-container bg-[#FFFDD0] rounded-lg mt-4 w-[90%] lg:w-[380px] md:w-[35vw] xl:w-[38vw]'>
+        <div className='py-5 px-3 lg:pl-6 overflow-y-scroll scrollbar-container bg-[#FFFDD0] rounded-lg mt-4 w-[90%] lg:w-[380px] md:w-[35vw] xl:w-[38vw]'>
           {currentQuizStep === 'start' ? (
             <>
               <div className='flex flex-row items-center justify-center '>
