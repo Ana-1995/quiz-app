@@ -6,7 +6,7 @@ import ideas from '../assets/ideas.png'
 const Categories = () => {
   const [categories, setCategories] = useState([])
   const [category, setCategory] = useState('')
-  const [quizNumber, setQuizNumber] = useState('')
+  const [quizNumber, setQuizNumber] = useState(1)
   const [difficulty, setDifficulty] = useState('select')
   const [quizData, setQuizData] = useState([])
   const [currentQuizStep, setCurrentQuizStep] = useState('start')
@@ -161,8 +161,7 @@ const Categories = () => {
                       id='quiz-number'
                       name='quiz-number'
                       value={quizNumber}
-                      className='border border-gray-500 rounded p-2 w-full bg-transparent placeholder:text-black'
-                      placeholder='1'
+                      className='border border-gray-500 rounded p-2 w-full bg-transparent placeholder:text-black'                  
                       onChange={handleChange}
                     />
                   </div>
